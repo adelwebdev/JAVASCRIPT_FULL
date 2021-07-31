@@ -23,3 +23,35 @@ body {
   transform: translateX(-50%);
   padding: 10px;
 }
+.themeContainer {
+  position: fixed;
+  top: 0;
+}
+.theme {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+#dark {
+  background: black;
+}
+#salmon {
+  background: salmon;
+}
+#yellow {
+  background: yellow;
+}
+
+/* creation de class pour les injecter! */
+.darkTheme {
+  background: black;
+  color: white;
+}
+.salmonTheme {
+  background: salmon;
+  color: white;
+}
+.yellowTheme {
+  background: yellow;
+  color: white;
+}

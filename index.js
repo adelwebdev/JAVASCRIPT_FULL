@@ -3,6 +3,7 @@ const photo = document.getElementById("img");
 console.log(btn);
 console.log(img);
 
+// Evenement sur CLICK *************************************************
 btn.addEventListener("click", () => {
   console.log("je click!");
   // pour ajouter une classe!
@@ -10,6 +11,7 @@ btn.addEventListener("click", () => {
   alert("ca change");
 });
 
+// Evenement sur mvt souris **********************************************
 const mouseEvent = document.querySelector(".mouseEvent");
 const horizontal = document.querySelector(".horizontal");
 const vertical = document.querySelector(".vertical");
@@ -34,8 +36,34 @@ mouseEvent.addEventListener("mousemove", (e) => {
   }
 });
 
+// Evenement sur INPUT ***************************************************
 document.getElementById("input").addEventListener("input", (e) => {
   // pour récuperer les valeus des input
   console.log(e.target.value);
   vertical.innerHTML = e.target.value;
+});
+
+// selector all et injection de classes *****************************************
+const theme = document.querySelectorAll(".theme");
+const dark = document.querySelector(".dark");
+const salmon = document.querySelector(".salmon");
+const yellow = document.querySelector(".yellow");
+
+theme.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    console.log(e.target.id);
+    switch (e.target.id) {
+      case "dark":
+        document.body.classList.add("darkTheme");
+        break;
+      case "yellow":
+        document.body.classList.add("yellowTheme");
+        break;
+      case "salmon":
+        document.body.classList.add("salmonTheme");
+        break;
+      default:
+        null;
+    }
+  });
 });
