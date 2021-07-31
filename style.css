@@ -12,14 +12,14 @@ body {
   height: 200px;
   visibility: hidden;
 }
-.show {
+.montre {
   visibility: visible;
 }
 .mouseEvent {
   border: 6px solid salmon;
   width: 220px;
   position: absolute;
-  left: 50%;
+  left: 20%;
   transform: translateX(-50%);
   padding: 10px;
 }
