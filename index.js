@@ -1,5 +1,5 @@
 const btn = document.querySelector("#btn");
-const photo = document.getElementById("img");
+const img = document.getElementById("img");
 console.log(btn);
 console.log(img);
 
@@ -7,8 +7,8 @@ console.log(img);
 btn.addEventListener("click", () => {
   console.log("je click!");
   // pour ajouter une classe!
-  photo.classList.toggle("montre");
-  alert("ca change");
+  img.classList.toggle("montre");
+  //   alert("ca change");
 });
 
 // Evenement sur mvt souris **********************************************
@@ -52,6 +52,7 @@ const yellow = document.querySelector(".yellow");
 theme.forEach((item) => {
   item.addEventListener("click", (e) => {
     console.log(e.target.id);
+    document.body.classList.remove("darkTheme", "salmonTheme", "yellowTheme");
     switch (e.target.id) {
       case "dark":
         document.body.classList.add("darkTheme");
