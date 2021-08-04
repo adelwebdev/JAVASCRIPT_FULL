@@ -77,3 +77,38 @@ if (xx == yy || xx > 3) {
 
 if (xx !== yy) console.log("true");
 xx == yy ? console.log("true!!") : console.log("false!!");
+
+// ************
+const faire = (tache) => {
+  console.log("je fais: " + tache);
+};
+faire("à manger");
+
+function calque(x1, y1) {
+  return x1 + y1;
+}
+// faut appeler avec console.log....
+
+// fonctions se jouent toutes seules ************
+(function maFct() {
+  console.log("je suis");
+})();
+
+(() => {
+  console.log("je me joue ");
+})();
+
+//************** */
+function cal(a, b) {
+  console.log("un calcul");
+  return a + b;
+}
+cal(3, 2);
+
+// ***** porté des variables ******
+function add() {
+  let a = 4;
+  console.log(a);
+  return a + 2;
+}
+add();
