@@ -1,70 +1,114 @@
-const btn = document.querySelector("#btn");
-const img = document.getElementById("img");
-console.log(btn);
-console.log(img);
+// ceci est un commentaire
+// ceci
+// est
+// un comm...
 
-// Evenement sur CLICK *************************************************
-btn.addEventListener("click", () => {
-  console.log("je click!");
-  // pour ajouter une classe!
-  img.classList.toggle("montre");
-  //   alert("ca change");
-});
+var unTexte = "voici un texte";
+console.log(unTexte);
 
-// Evenement sur mvt souris **********************************************
-const mouseEvent = document.querySelector(".mouseEvent");
-const horizontal = document.querySelector(".horizontal");
-const vertical = document.querySelector(".vertical");
+unTexte = "youpi";
+console.log(unTexte);
 
-mouseEvent.addEventListener("mousemove", (e) => {
-  console.log(e);
-  //on recupère les valeurs de x et y
-  horizontal.innerHTML = e.x;
-  vertical.innerHTML = e.y;
-  mouseEvent.style.left = (e.x / window.innerWidth) * 100 + "%";
-  //   mouseEvent.style.top = (e.y / window.innerHeight) * 100 + "%";
+let prenom = "justin";
+prenom = "julien";
+console.log(prenom);
 
-  if (e.x > 500) {
-    document.body.style.filter = "blur(3px)";
-  } else {
-    document.body.style.filter = "none";
-  }
-  if (e.y > 150) {
-    mouseEvent.style.background = "skyblue";
-  } else {
-    mouseEvent.style.background = "none";
-  }
-});
+let chiffre = 23;
+chiffre = 233;
+console.log(chiffre);
 
-// Evenement sur INPUT ***************************************************
-document.getElementById("input").addEventListener("input", (e) => {
-  // pour récuperer les valeus des input
-  console.log(e.target.value);
-  vertical.innerHTML = e.target.value;
-});
+let chaine = "je suis l'autre chaine de caractère";
+console.log(chaine);
 
-// selector all et injection de classes *****************************************
-const theme = document.querySelectorAll(".theme");
-const dark = document.querySelector(".dark");
-const salmon = document.querySelector(".salmon");
-const yellow = document.querySelector(".yellow");
+let newChaine = chaine + " avec le rajout";
+console.log(newChaine);
 
-theme.forEach((item) => {
-  item.addEventListener("click", (e) => {
-    console.log(e.target.id);
-    document.body.classList.remove("darkTheme", "salmonTheme", "yellowTheme");
-    switch (e.target.id) {
-      case "dark":
-        document.body.classList.add("darkTheme");
-        break;
-      case "yellow":
-        document.body.classList.add("yellowTheme");
-        break;
-      case "salmon":
-        document.body.classList.add("salmonTheme");
-        break;
-      default:
-        null;
-    }
-  });
-});
+let newChaine2 = `${chaine} avec le rajout et la touche 7`;
+console.log(newChaine2);
+
+let cara = "je suis une chaine";
+let number = 54;
+let boolean = true;
+let array = ["je", "suis", 32, false];
+let obj = {
+  prenom: "audrey",
+  age: 34,
+  ville: "Bordeau",
+};
+console.log(obj);
+console.log(typeof array);
+
+let arbre = null;
+console.log(arbre);
+console.log(typeof arbre);
+
+console.log(2 ** 4);
+
+let total = 0;
+let x = 4;
+// total = total + 1;
+total--;
+console.log(total);
+total *= 5;
+console.log(total);
+total = ++x;
+console.log(total);
+
+let xx = 2;
+let yy = 4;
+
+if (xx < yy) {
+  console.log("y est plus grand que x");
+} else {
+  console.log("y est plus petit que x");
+}
+
+if (!x) {
+  console.log("x existe");
+} else {
+  console.log("pas de x");
+}
+
+if (xx == yy || xx > 3) {
+  console.log("oui");
+} else {
+  console.log("non!");
+}
+
+if (xx !== yy) console.log("true");
+xx == yy ? console.log("true!!") : console.log("false!!");
+
+// ************
+const faire = (tache) => {
+  console.log("je fais: " + tache);
+};
+faire("à manger");
+
+function calque(x1, y1) {
+  return x1 + y1;
+}
+// faut appeler avec console.log....
+
+// fonctions se jouent toutes seules ************
+(function maFct() {
+  console.log("je suis");
+})();
+
+(() => {
+  console.log("je me joue ");
+})();
+
+//************** */
+function cal(a, b) {
+  console.log("un calcul");
+  return a + b;
+}
+cal(3, 2);
+
+// ***** porté des variables ******
+function add() {
+  let a = 4;
+  console.log(a);
+  return a + 2;
+}
+add();
