@@ -47,3 +47,18 @@ p {
   transition: 0.05s ease;
   z-index: -1;
 }
+nav {
+  background-color: pink;
+  position: fixed;
+  height: 50px;
+  width: 100%;
+  color: green;
+  top: -50px;
+  /* visibility: hidden; */
+}
+ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0;
+}

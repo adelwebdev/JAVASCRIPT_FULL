@@ -80,8 +80,18 @@ const keypress = document.querySelector(".keypress");
 const key = document.getElementById("key");
 console.log(keypress);
 console.log(key);
+
+// pour inserer un son dans JS
+const ring = (key) => {
+  const audio = new Audio();
+  audio.src = key + ".mp3";
+  console.log(audio.src);
+  audio.play();
+};
+
 document.addEventListener("keypress", (e) => {
   console.log(e.key);
+  // pour inserer le texte tapeé!!!! soit INNER HTML  soit TEXTCONTENT  !!!!!!!
   //   key.innerHTML = e.key;
   key.textContent = e.key;
   if (e.key === "a") {
@@ -90,5 +100,59 @@ document.addEventListener("keypress", (e) => {
     keypress.style.background = "violet";
   } else {
     keypress.style.background = "grey";
+  }
+  //   ring(e.key);
+});
+
+// les evenements sur le scroll **********
+
+// pr faire apparaittre et disparaittre la Nav bar! ****
+const nav = document.querySelector("nav");
+console.log(nav);
+
+window.addEventListener("scroll", () => {
+  //   console.log(window.scrollY);
+  if (window.scrollY > 100) {
+    nav.style.top = 0;
+  } else {
+    nav.style.top = "-50px";
+  }
+});
+
+// les evenements sur les formulaires ************
+// querySelector sur input EN CHOISISSANT LE TYPE D'INPUT!!!
+const inputName = document.querySelector("input[type = 'text']");
+const select = document.querySelector("select");
+const form = document.querySelector("form");
+console.log(form);
+console.log(select);
+console.log(inputName);
+let pseudo = "";
+let language = "";
+
+inputName.addEventListener("input", (e) => {
+  //   console.log(e.target.value);
+  pseudo = e.target.value;
+  console.log(pseudo);
+});
+
+select.addEventListener("input", (e) => {
+  //   console.log(e.target.value);
+  language = e.target.value;
+  console.log(language);
+});
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  console.log("ça se barre plus!");
+  console.log(cgv.checked);
+
+  if (cgv.checked) {
+    //Pour afficher dans Division vide!!
+    document.querySelector(
+      "form > div"
+    ).innerHTML = `<h3>Le langage de ${pseudo} est  ${language}</h3>`;
+  } else {
+    alert("il faut accepter les cgv!");
   }
 });
