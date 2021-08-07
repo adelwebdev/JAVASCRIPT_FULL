@@ -148,11 +148,34 @@ form.addEventListener("submit", (e) => {
   console.log(cgv.checked);
 
   if (cgv.checked) {
-    //Pour afficher dans Division vide!!
+    // TEXTCONTENT: pour ecrire du texte, INNERHTML: pour utiliser les balises html et leurs caracteristiques!!!
     document.querySelector(
+      //Pour afficher dans Division vide!!
       "form > div"
     ).innerHTML = `<h3>Le langage de ${pseudo} est  ${language}</h3>`;
   } else {
     alert("il faut accepter les cgv!");
   }
 });
+
+// les LOAD EVENTS ******************
+window.addEventListener("load", () => {
+  console.log("doc chargé!");
+});
+
+// les FOREACH **********************
+// IL Y A 2 FAçON DE FAIRE!!!
+
+// Méthode 1
+const boxes1 = document.getElementsByClassName("box");
+const boxes = document.querySelectorAll(".box");
+console.log(boxes);
+
+//Méthode 2
+boxes.forEach((box) => {
+  box.addEventListener("click", (e) => {
+    console.log((e.target.style.transform = "scale(0.7)"));
+  });
+});
+
+//------------------------------------------------------------------------
