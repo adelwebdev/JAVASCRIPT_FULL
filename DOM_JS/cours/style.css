@@ -56,6 +56,22 @@ nav {
   top: -50px;
   /* visibility: hidden; */
 }
+nav::after {
+  content: "";
+  height: 150px;
+  width: 150px;
+  background: yellowgreen;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transition: 0.25s;
+  z-index: 20;
+  opacity: 0;
+  left: var(--x);
+  top: var(--y);
+}
+nav:hover::after {
+  opacity: 1;
+}
 ul {
   display: flex;
   align-items: center;
