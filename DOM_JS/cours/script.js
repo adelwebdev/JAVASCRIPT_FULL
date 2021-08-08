@@ -177,5 +177,121 @@ boxes.forEach((box) => {
     console.log((e.target.style.transform = "scale(0.7)"));
   });
 });
+//---------------------------------------------------------------------
+// addEventListener VS onClick
+// Onclick
+// document.body.onclick = () => {
+//   console.log("click! avec méthode on click!");
+// };
+// document.body.onclick = () => {
+//   console.log("click2!");
+// };
+// le ONCLICK ecrase, alors que addEventListener on peut ajouter plusieurs
+// document.body.addEventListener("click", () => {
+//   console.log("click1!");
+// });
+// document.body.addEventListener("click", () => {
+//   console.log("click2!");
+// });
 
-//------------------------------------------------------------------------
+//Bubling (de base: addEventListener est paramétré en Bubling)
+document.body.addEventListener(
+  "click",
+  () => {
+    console.log("click1!");
+  },
+  false
+);
+//Usecapture
+document.body.addEventListener(
+  "click",
+  () => {
+    console.log("click2!");
+  },
+  true
+);
+
+//********************************************** */
+// stop propagation
+questionContainer.addEventListener("click", (e) => {
+  // alert("text");
+  e.stopPropagation();
+});
+
+// RemoveEventListener ************
+//******************************** */
+
+// **********************************
+// le BOM **************************
+console.log(window.innerHeight);
+console.log(window.scrollY);
+
+// Pour afficher des POP-UP !!!!!!!!!!!!!! avec: window.open!
+// window.open("http://google.com", "cours js", "height = 600", "width = 400");
+
+// Pour férmé une fenetre!!!!!
+// window.close();
+
+// evenements adossé à window:
+// alert("hello!");
+
+//confirm:
+btn2.addEventListener("click", () => {
+  confirm("voulez-vous vous tromper????");
+});
+
+// Prompt:
+btn1.addEventListener("click", () => {
+  let answer = prompt("entrer votre nom!");
+  // on ajoute un plus pour ne pas écrasé!
+  questionContainer.innerHTML += `<h3>${answer} tu as trouvé</h3>`;
+});
+
+// setTimeOut .... pour faire un timer
+setTimeout(() => {
+  // logique à exécuter
+  questionContainer.style.borderRadius = "300px";
+}, 6000);
+
+// pour exécuter du code à répétition!!!
+// let interval = setInterval(() => {
+//   document.body.innerHTML += `<div class='box'><h2>new boite</h2></div>`;
+// }, 1000);
+
+// pour stoper le code à répétition !! avec: clearInterval
+// document.body.addEventListener("click", (e) => {
+//   // pour retirer un élément du DOM: target.remove()
+//   e.target.remove();
+//   clearInterval(interval);
+// });
+
+// Location
+console.log(location.href);
+console.log(location.host);
+console.log(location.pathname);
+console.log(location.search);
+// location.replace("http://lequipe.fr");
+
+// window.onload = () => {
+//   location.href = "http://twitter.fr";
+// };
+
+//navigator
+console.log(navigator.userAgent);
+
+// pour la localisation
+// https://developer.mozilla.org/fr/docs/Web/API/Geolocation_API
+
+// History!
+console.log(window.history);
+// window.history.back();
+// history.go(-2);
+
+// SET PROPERTY !!!-------------trés utile
+// dans le cas où on ne peut pas inserer une classe (comme pour les: after)
+// car ici il y a un after (nav:after)
+window.addEventListener("mousemove", (e) => {
+  console.log(e);
+  nav.style.setProperty("--x", e.layerX + "px");
+  nav.style.setProperty("--y", e.layerY + "px");
+});
