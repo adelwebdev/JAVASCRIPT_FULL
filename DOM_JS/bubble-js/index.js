@@ -10,7 +10,7 @@ const bubbleMaker = () => {
   const bubble = document.createElement("span");
   // insertion de la classe .bubble (crée en css)
   bubble.classList.add("bubble");
-  //
+  //ça veut le body tu as un enfant qui s'appelle bubble (le body on lui a créé un span; qui est bubble)
   document.body.appendChild(bubble);
 
   //pour des tailles aléatoires avec méthode Random
